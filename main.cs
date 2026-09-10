@@ -1,6 +1,6 @@
 namespace Example {
     class Program {
-        public static async Main() {
+        static void Main(string[] args) {
             int count = 0;
         }
     }
