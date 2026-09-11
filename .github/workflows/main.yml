@@ -22,8 +22,16 @@ jobs:
       - name: Restore dependencies
         run: dotnet restore
 
-      - name: Build
+      - name: Build .NET
         run: dotnet build --no-restore --configuration Release
 
-      - name: Run tests
+      - name: Run .NET tests
         run: dotnet test --no-build --configuration Release
+
+      - name: Install React dependencies
+        working-directory: ./client
+        run: npm ci
+
+      - name: Lint React
+        working-directory: ./client
+        run: npm run lint
