@@ -7,7 +7,7 @@ on:
     branches: ["dev", "test", "stage"]
 
 jobs:
-  test:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,8 +28,17 @@ jobs:
       - name: Run .NET tests
         run: dotnet test --no-build --configuration Release
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Install React dependencies
         run: npm ci
 
       - name: Lint React
         run: npx eslint
+
+      #- name: Build React
+      #  working-directory: ./client
+      #  run: npm run build
