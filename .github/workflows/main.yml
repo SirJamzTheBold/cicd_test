@@ -29,7 +29,7 @@ jobs:
         run: dotnet test --no-build --configuration Release
 
       - name: Install React dependencies
-        run: npm ci
+        run: npm install
 
       - name: Lint React
         run: npm run lint
