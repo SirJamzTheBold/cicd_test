@@ -37,7 +37,7 @@ jobs:
         run: cd client && npm ci
 
       - name: Lint React
-        run: npx eslint
+        run: cd client && npx eslint
 
 #      - name: Build React
 #        working-directory: ./client
