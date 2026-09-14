@@ -33,11 +33,8 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Change directory
-        run: cd client
-
       - name: Install React dependencies
-        run: npm ci
+        run: cd client && npm ci
 
       - name: Lint React
         run: npx eslint
