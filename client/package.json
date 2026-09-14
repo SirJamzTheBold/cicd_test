@@ -14,7 +14,8 @@
   "description": "cicd test",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "lint": "eslint ."
   },
   "author": "scorey",
   "license": "ISC",
